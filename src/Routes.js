@@ -8,7 +8,6 @@ import {
 import Login from "./Login";
 import Register from "./Register";
 import TodosContainer from "./TodosContainer";
-import { useGlobalContext } from "./context";
 
 function PrivateRoute({ children, ...rest }) {
   const token = localStorage.getItem("jwt");

@@ -1,32 +1,49 @@
-import React from "react";
+import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 
 const Sort = () => {
-  const { todoList, setTodoList, sortedBy, setSortedBy } = useGlobalContext();
-  const handleSort = (byWhat) => {
-    if (byWhat === "name") {
-      const sortedTodoList = todoList.sort(function (a, b) {
-        var nameA = a.name.toUpperCase(); // ignore upper and lowercase
-        var nameB = b.name.toUpperCase(); // ignore upper and lowercase
-        if (nameA < nameB) {
-          return -1;
-        }
-        if (nameA > nameB) {
-          return 1;
-        }
+  const { todoList, setTodoList, setSortedBy } = useGlobalContext();
+  const [sortedById, setSortedById] = useState(false);
+  const [sortedByName, setSortedByName] = useState(false);
 
-        // names must be equal
-        return 0;
+  const handleSort = (byWhat) => {
+    if (byWhat === "name" && sortedByName === false) {
+      const sortedTodoList = todoList.sort(function (a, b) {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        const order = nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+        return order;
       });
-      setSortedBy("name");
-      console.log(sortedTodoList);
+      setSortedById(false);
+      setSortedByName(true);
+      setSortedBy("nameAsc");
       setTodoList(sortedTodoList);
-    } else if (byWhat === "id") {
+    } else if (byWhat === "name" && sortedByName === true) {
+      const sortedTodoList = todoList.sort(function (a, b) {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        const order = nameA > nameB ? -1 : nameA < nameB ? 1 : 0;
+        return order;
+      });
+      setSortedById(false);
+      setSortedByName(false);
+      setSortedBy("nameDesc");
+      setTodoList(sortedTodoList);
+    } else if (byWhat === "id" && sortedById === false) {
       const sortedTodoList = todoList.sort(function (a, b) {
         return a.id - b.id;
       });
-      setSortedBy("id");
-      console.log(sortedTodoList);
+      setSortedByName(false);
+      setSortedById(true);
+      setSortedBy("idAsc");
+      setTodoList(sortedTodoList);
+    } else if (byWhat === "id" && sortedById === true) {
+      const sortedTodoList = todoList.sort(function (a, b) {
+        return b.id - a.id;
+      });
+      setSortedByName(false);
+      setSortedById(false);
+      setSortedBy("idDesc");
       setTodoList(sortedTodoList);
     }
   };
