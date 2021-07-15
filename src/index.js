@@ -1,16 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
+import "./scss/index.css";
 import { AppProvider } from "./context";
 import Routes from "./Routes";
 
 ReactDOM.render(
   <React.StrictMode>
-    
-      <AppProvider>
-        <Routes />
-      </AppProvider>
-   
+    <AppProvider>
+      <Routes />
+    </AppProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

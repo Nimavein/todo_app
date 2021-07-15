@@ -1,0 +1,26 @@
+@include media-sm {
+  .register-form {
+    width: 80% !important;
+    .username-register-input,
+    .email-register-input,
+    .password-register-input,
+    .repeat-password-register-input {
+      width: 280px !important;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0 !important;
+  }
+}
+
+@include media-md {
+  .register-form {
+    width: 65% !important;
+  }
+}
+
+@include media-lg {
+}

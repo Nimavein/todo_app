@@ -5,10 +5,10 @@ import axios from "axios";
 
 const TodoEditForm = ({ id, handleEditVisibility, name }) => {
   const [todoEditData, setTodoEditData] = useState();
-  const { todoList, setTodoList, jwt } = useGlobalContext();
+  const { setTodoList, jwt } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
-  const [todoName, setTodoName] = useState(name);
+  const [todoName] = useState(name);
   const [oldTasks, setOldTasks] = useState([]);
 
   const handleFormChange = (e) => {

@@ -1,0 +1,16 @@
+@import "config";
+@import "responsive";
+@import "register-form";
+@import "navbar";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $background-color;
+  color: $text-color;
+  font-family: "Roboto", sans-serif;
+}

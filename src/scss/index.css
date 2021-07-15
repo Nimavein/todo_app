@@ -1,0 +1,144 @@
+@media screen and (max-width: 768px) {
+  .register-form {
+    width: 80% !important;
+  }
+  .register-form .username-register-input,
+  .register-form .email-register-input,
+  .register-form .password-register-input,
+  .register-form .repeat-password-register-input {
+    width: 280px !important;
+  }
+  .logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-left: 0 !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .register-form {
+    width: 65% !important;
+  }
+}
+
+.register-page {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.register-page .register-form {
+  height: 700px;
+  width: 45%;
+  background-color: #2d2d2d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  margin-top: 100px;
+}
+
+.register-page .register-form .create-account-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  background-color: #ff9900;
+  height: 70px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 26px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.register-page .register-form .create-account-button:hover {
+  background-color: #1a1a1a;
+  color: #ff9900;
+}
+
+.register-page .register-form input {
+  text-indent: 10px;
+}
+
+.register-page .register-form .back-arrow {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+
+.register-page .register-form .register-form-title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  color: #ff9900;
+  font-size: 30px;
+}
+
+.register-page .register-form .username-register-input,
+.register-page .register-form .email-register-input,
+.register-page .register-form .password-register-input,
+.register-page .register-form .repeat-password-register-input {
+  margin-bottom: 30px;
+  height: 50px;
+  width: 400px;
+  border-radius: 8px;
+  border: none;
+}
+
+.register-page .register-form .register-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.navbar {
+  z-index: 0;
+}
+
+.navbar .logo {
+  font-family: "ZCOOL KuaiLe", cursive;
+  padding: 10px 0 0 10px;
+  font-size: 56px;
+  color: #ff9900;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
+/*# sourceMappingURL=index.css.map */

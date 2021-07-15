@@ -6,6 +6,7 @@ import {
   Redirect,
 } from "react-router-dom";
 import Login from "./Login";
+import Navbar from "./Navbar";
 import Register from "./Register";
 import TodosContainer from "./TodosContainer";
 
@@ -34,6 +35,7 @@ function PrivateRoute({ children, ...rest }) {
 const Routes = () => {
   return (
     <Router>
+      <Navbar />
       <Switch>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
