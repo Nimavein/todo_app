@@ -1,0 +1,61 @@
+import React, { useState } from "react";
+import Task from "./Task";
+
+const TaskForm = ({
+  taskData,
+  setTaskData,
+  allTasksToAddData,
+  setAllTasksToAddData,
+}) => {
+  const [checked, setChecked] = useState(true);
+
+  const handleCheckboxChange = () => {
+    setChecked(!checked);
+    setTaskData({
+      ...taskData,
+      isDone: checked,
+    });
+    console.log(taskData);
+  };
+
+  const handleFormChange = (e) => {
+    setTaskData({
+      ...taskData,
+      isDone: !checked,
+      [e.currentTarget.id]: e.currentTarget.value,
+    });
+    console.log(taskData);
+  };
+
+  const handleAddTask = (e) => {
+    e.preventDefault();
+    setAllTasksToAddData([...allTasksToAddData, taskData]);
+    console.log(allTasksToAddData);
+  };
+
+  return (
+    <div>
+      {allTasksToAddData.map((task) => {
+        return <Task key={task.name} {...task} />;
+      })}
+      <form onSubmit={(e) => handleAddTask(e, taskData)}>
+        <div>
+          <label>
+            Task Name:
+            <input onChange={handleFormChange} required type="text" id="name" />
+          </label>
+          <label>
+            Is done?:
+            <input type="checkbox" onChange={handleCheckboxChange} />
+          </label>
+        </div>
+
+        <div>
+          <button>Add Task</button>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default TaskForm;
