@@ -34,15 +34,15 @@ const TaskForm = ({
   };
 
   return (
-    <div className="task-form">
+    <div className="task-form-container">
       {allTasksToAddData.map((task) => {
         return <Task key={task.name} {...task} taskData={taskData} />;
       })}
-      <form onSubmit={(e) => handleAddTask(e, taskData)}>
-        <div>
+      <form className="task-form" onSubmit={(e) => handleAddTask(e, taskData)}>
+        <div class="checkbox-input">
           <input type="checkbox" onChange={handleCheckboxChange} />
-
           <input
+            className="add-task-input"
             onChange={handleFormChange}
             required
             type="text"
@@ -51,9 +51,7 @@ const TaskForm = ({
           />
         </div>
 
-        <div>
-          <button>Add</button>
-        </div>
+        <button className="add-task-button">Add</button>
       </form>
     </div>
   );

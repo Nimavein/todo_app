@@ -62,6 +62,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
             placeholder="List name"
           />
         </form>
+        <hr className="form-divider" />
         <TaskForm
           todoData={todoData}
           setTodoData={setTodoData}

@@ -64,10 +64,12 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
       <h2>edit todo form</h2>
       <form onSubmit={(e) => handleEditTodo(e, todoEditData)}>
         <div>
-          <label>
-            Name:
-            <input onChange={handleFormChange} type="text" id="name" />
-          </label>
+          <input
+            onChange={handleFormChange}
+            placeholder="name"
+            type="text"
+            id="name"
+          />
         </div>
 
         {task &&
@@ -79,6 +81,7 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
                 todoId={id}
                 todoName={name}
                 todoTasks={task}
+                isTaskAdded={true}
               />
             );
           })}

@@ -391,7 +391,18 @@
   border: none;
   cursor: pointer;
   color: #ff9900;
-  width: 50%;
+  width: 150px;
+  text-transform: uppercase;
+  font-size: 24px;
+  margin: 0 0 20px 20px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.form-backdrop .add-todo-container .login-form-buttons .cancel-add-todo-button:hover {
+  background-color: #1a1a1a;
+  color: #ffffff;
 }
 
 .form-backdrop .add-todo-container .login-form-buttons .save-add-todo-button {
@@ -407,9 +418,9 @@
   border-radius: 8px;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  height: 40px;
-  width: 100px;
-  margin: 0 10px 10px 0;
+  height: 50px;
+  width: 150px;
+  margin: 0 20px 20px 0;
 }
 
 .form-backdrop .add-todo-container .login-form-buttons .save-add-todo-button:hover {
@@ -417,12 +428,81 @@
   color: #ff9900;
 }
 
+.form-backdrop .add-todo-container .form-divider {
+  border: none;
+  border-top: 2px solid #ff9900;
+  width: 90%;
+  margin-bottom: 26px;
+}
+
 .form-backdrop .add-todo-container .add-todo-form {
   width: 90%;
 }
 
-.form-backdrop .add-todo-container .task-form {
+.form-backdrop .add-todo-container .task-form-container {
   width: 90%;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form .add-task-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  background-color: #ff9900;
+  height: 70px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 26px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  height: 24px;
+  width: 70px;
+  margin-top: 2px;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form .add-task-button:hover {
+  background-color: #1a1a1a;
+  color: #ff9900;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form .checkbox-input {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form .checkbox-input .add-task-input {
+  width: 90%;
+  border: none;
+  background-color: #2d2d2d;
+  border-bottom: 1px solid #ff9900;
+  text-indent: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding-bottom: 2px;
+  color: #ffffff;
 }
 
 .form-backdrop .add-todo-container .add-todo-name-input {
@@ -433,6 +513,29 @@
   border-radius: 8px;
   border: none;
   margin-top: 20px;
+}
+
+.single-task {
+  width: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-right: auto;
+}
+
+.single-task .task-name {
+  margin-left: 10px;
+  border-bottom: 1px solid #ffffff;
+  width: 100%;
+  margin-bottom: 10px;
+  text-indent: 10px;
+  padding-bottom: 2px;
+}
+
+.single-task .task-checkbox {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 * {
