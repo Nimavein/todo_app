@@ -40,54 +40,39 @@ const Login = () => {
     }
   };
 
-  const handleLogout = async () => {
-    localStorage.removeItem("jwt");
-    setJwt("");
-  };
-
   return (
-    <div>
+    <div className="login-page">
       {errorMsg && <p>{errorMsg}</p>}
-      <h1>Login form</h1>
-      {!jwt && (
-        <div>
-          <form onSubmit={(e) => handleLogin(e, loginData)}>
-            <div>
-              <label>
-                Username or email:
-                <input
-                  onChange={handleFormChange}
-                  required
-                  type="text"
-                  id="identifier"
-                />
-              </label>
-              <label>
-                Password:
-                <input
-                  onChange={handleFormChange}
-                  required
-                  type="password"
-                  id="password"
-                />
-              </label>
-            </div>
+      <form className="login-form" onSubmit={(e) => handleLogin(e, loginData)}>
+        <h1 className="login-title">Login</h1>
+        <div className="login-inputs">
+          <input
+            className="identifier-login-input"
+            onChange={handleFormChange}
+            required
+            type="text"
+            id="identifier"
+            placeholder="Username or email:"
+          />
 
-            <div className="login-form-buttons">
-              <button>Login</button>
-            </div>
-          </form>
-          <button>
-            <Link to="/register">Register</Link>
-          </button>
+          <input
+            className="password-login-input"
+            onChange={handleFormChange}
+            required
+            type="password"
+            id="password"
+            placeholder="Password"
+          />
         </div>
-      )}
-      {jwt && (
-        <div>
-          <a onClick={handleLogout}>Logout</a>
-          <Link to="/to-do-lists">to do lists</Link>
+
+        <div className="login-form-buttons">
+          <button className="login-button">Login</button>
         </div>
-      )}
+        <p className="or-text">or</p>
+        <button className="register-button">
+          <Link to="/register">create an account</Link>
+        </button>
+      </form>
     </div>
   );
 };

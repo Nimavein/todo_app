@@ -1,10 +1,13 @@
 @include media-sm {
-  .register-form {
+  .register-form,
+  .login-form {
     width: 80% !important;
     .username-register-input,
     .email-register-input,
     .password-register-input,
-    .repeat-password-register-input {
+    .repeat-password-register-input,
+    .identifier-login-input,
+    .password-login-input {
       width: 280px !important;
     }
   }
@@ -17,7 +20,8 @@
 }
 
 @include media-md {
-  .register-form {
+  .register-form,
+  .login-form {
     width: 65% !important;
   }
 }

@@ -10,6 +10,40 @@ $border-radius: 8px;
   cursor: pointer;
 }
 
+@mixin authentication-form {
+  height: 700px;
+  width: 45%;
+  background-color: $secondary-background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: $border-radius;
+  margin-top: 100px;
+}
+
+@mixin form-button {
+  @include button-no-background;
+  width: 200px;
+  background-color: $primary-color;
+  height: 70px;
+  color: $text-color;
+  font-size: 20px;
+  margin-top: 26px;
+  border-radius: $border-radius;
+  @include transition-ease;
+  &:hover {
+    background-color: $background-color;
+    color: $primary-color;
+  }
+}
+
+@mixin form-title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  color: $primary-color;
+  font-size: 30px;
+}
+
 @mixin transition-ease {
   transition: all 0.5s ease-in-out;
 }

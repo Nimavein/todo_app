@@ -4,28 +4,9 @@
   align-items: center;
   justify-content: center;
   .register-form {
-    height: 700px;
-    width: 45%;
-    background-color: $secondary-background;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: $border-radius;
-    margin-top: 100px;
+    @include authentication-form;
     .create-account-button {
-      @include button-no-background;
-      width: 200px;
-      background-color: $primary-color;
-      height: 70px;
-      color: $text-color;
-      font-size: 20px;
-      margin-top: 26px;
-      border-radius: $border-radius;
-      @include transition-ease;
-      &:hover {
-        background-color: $background-color;
-        color: $primary-color;
-      }
+      @include form-button;
     }
     input {
       text-indent: 10px;
@@ -36,10 +17,7 @@
       margin-top: 30px;
     }
     .register-form-title {
-      margin-top: 70px;
-      margin-bottom: 70px;
-      color: $primary-color;
-      font-size: 30px;
+      @include form-title;
     }
     .username-register-input,
     .email-register-input,

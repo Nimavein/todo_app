@@ -1,11 +1,20 @@
 @media screen and (max-width: 768px) {
-  .register-form {
+  .register-form,
+  .login-form {
     width: 80% !important;
   }
   .register-form .username-register-input,
   .register-form .email-register-input,
   .register-form .password-register-input,
-  .register-form .repeat-password-register-input {
+  .register-form .repeat-password-register-input,
+  .register-form .identifier-login-input,
+  .register-form .password-login-input,
+  .login-form .username-register-input,
+  .login-form .email-register-input,
+  .login-form .password-register-input,
+  .login-form .repeat-password-register-input,
+  .login-form .identifier-login-input,
+  .login-form .password-login-input {
     width: 280px !important;
   }
   .logo {
@@ -23,7 +32,8 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .register-form {
+  .register-form,
+  .login-form {
     width: 65% !important;
   }
 }
@@ -120,6 +130,12 @@
 
 .navbar {
   z-index: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .navbar .logo {
@@ -127,6 +143,139 @@
   padding: 10px 0 0 10px;
   font-size: 56px;
   color: #ff9900;
+}
+
+.logout-button {
+  margin: 20px 20px 0 0;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+}
+
+.login-page {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login-page .login-form {
+  height: 700px;
+  width: 45%;
+  background-color: #2d2d2d;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 8px;
+  margin-top: 100px;
+}
+
+.login-page .login-form .login-title {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  color: #ff9900;
+  font-size: 30px;
+}
+
+.login-page .login-form .login-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  background-color: #ff9900;
+  height: 70px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 26px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.login-page .login-form .login-button:hover {
+  background-color: #1a1a1a;
+  color: #ff9900;
+}
+
+.login-page .login-form .login-inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.login-page .login-form .login-inputs .identifier-login-input,
+.login-page .login-form .login-inputs .password-login-input {
+  margin-bottom: 30px;
+  height: 50px;
+  width: 400px;
+  border-radius: 8px;
+  border: none;
+}
+
+.login-page .login-form .or-text {
+  margin: 50px 0 50px 0;
+}
+
+.login-page .login-form .register-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ff9900 !important;
+  font-size: 26px;
+  font-weight: 100 !important;
+  position: relative;
+}
+
+.login-page .login-form .register-button:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #ff9900;
+  -webkit-transform-origin: bottom right;
+          transform-origin: bottom right;
+  -webkit-transition: -webkit-transform 0.25s ease-out;
+  transition: -webkit-transform 0.25s ease-out;
+  transition: transform 0.25s ease-out;
+  transition: transform 0.25s ease-out, -webkit-transform 0.25s ease-out;
+}
+
+.login-page .login-form .register-button:hover:after {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+  -webkit-transform-origin: bottom left;
+          transform-origin: bottom left;
+}
+
+.login-page .login-form a {
+  text-decoration: none;
+  color: #ff9900 !important;
+}
+
+.login-page .login-form input {
+  text-indent: 10px;
 }
 
 * {
