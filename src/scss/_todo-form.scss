@@ -1,0 +1,43 @@
+.form-backdrop {
+  @include backdrop;
+  .add-todo-container {
+    background-color: $secondary-background;
+    height: 90%;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .login-form-buttons {
+      margin-top: auto;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      .cancel-add-todo-button {
+        @include button-no-background;
+        color: $primary-color;
+        width: 50%;
+      }
+      .save-add-todo-button {
+        @include form-button;
+        height: 40px;
+        width: 100px;
+        margin: 0 10px 10px 0;
+      }
+    }
+    .add-todo-form {
+      width: 90%;
+    }
+    .task-form {
+      width: 90%;
+    }
+    .add-todo-name-input {
+      text-indent: 10px;
+      margin-bottom: 30px;
+      height: 40px;
+      width: 100%;
+      border-radius: $border-radius;
+      border: none;
+      margin-top: 20px;
+    }
+  }
+}

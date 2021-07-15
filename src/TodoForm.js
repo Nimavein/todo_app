@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import TaskForm from "./TaskForm";
 import axios from "axios";
 
-const TodoForm = () => {
+const TodoForm = ({ handleAddTodoVisibility }) => {
   const [todoData, setTodoData] = useState();
   const { setTodoList, jwt } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
@@ -41,6 +41,7 @@ const TodoForm = () => {
             setTodoList(response.data);
           });
         setAllTasksToAddData([]);
+        handleAddTodoVisibility();
       })
       .catch((error) => {
         // Handle error.
@@ -49,29 +50,44 @@ const TodoForm = () => {
   };
 
   return (
-    <div>
-      <h1>Add todo form</h1>
-      <form onSubmit={(e) => handleAddTodo(e, todoData)}>
-        <div>
-          <label>
-            Name:
-            <input onChange={handleFormChange} required type="text" id="name" />
-          </label>
-        </div>
-
+    <div className="form-backdrop">
+      <div className="add-todo-container">
+        <form className="add-todo-form" id="add-form">
+          <input
+            class="add-todo-name-input"
+            onChange={handleFormChange}
+            required
+            type="text"
+            id="name"
+            placeholder="List name"
+          />
+        </form>
+        <TaskForm
+          todoData={todoData}
+          setTodoData={setTodoData}
+          handleFormChange={handleFormChange}
+          taskData={taskData}
+          setTaskData={setTaskData}
+          allTasksToAddData={allTasksToAddData}
+          setAllTasksToAddData={setAllTasksToAddData}
+        />
         <div className="login-form-buttons">
-          <button>Add</button>
+          <button
+            className="cancel-add-todo-button"
+            onClick={handleAddTodoVisibility}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={(e) => handleAddTodo(e, todoData)}
+            form="add-todo-form"
+            className="save-add-todo-button"
+          >
+            Save
+          </button>
         </div>
-      </form>
-      <TaskForm
-        todoData={todoData}
-        setTodoData={setTodoData}
-        handleFormChange={handleFormChange}
-        taskData={taskData}
-        setTaskData={setTaskData}
-        allTasksToAddData={allTasksToAddData}
-        setAllTasksToAddData={setAllTasksToAddData}
-      />
+      </div>
     </div>
   );
 };

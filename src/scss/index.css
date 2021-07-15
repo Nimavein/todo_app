@@ -17,17 +17,28 @@
   .login-form .password-login-input {
     width: 280px !important;
   }
-  .logo {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+  .navbar {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center !important;
+        -ms-flex-align: center !important;
+            align-items: center !important;
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
     padding-left: 0 !important;
+  }
+  .navbar .logout-button {
+    position: absolute !important;
+    right: 0;
+    top: -4px;
+  }
+  .search-input {
+    width: 40vw !important;
+  }
+  .add-todo-form {
+    width: 80% !important;
   }
 }
 
@@ -276,6 +287,152 @@
 
 .login-page .login-form input {
   text-indent: 10px;
+}
+
+.todos-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100%;
+}
+
+.todos-container .content {
+  width: 80%;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.search-input {
+  text-indent: 10px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 30vw;
+  border-radius: 8px;
+  border: none;
+  margin-right: 200px;
+}
+
+.filter-sort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.add-todo-button {
+  position: fixed;
+  bottom: 20px;
+  right: 10%;
+  height: 80px;
+  cursor: pointer;
+}
+
+.form-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.9);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+.form-backdrop .add-todo-container {
+  background-color: #2d2d2d;
+  height: 90%;
+  width: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-backdrop .add-todo-container .login-form-buttons {
+  margin-top: auto;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.form-backdrop .add-todo-container .login-form-buttons .cancel-add-todo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff9900;
+  width: 50%;
+}
+
+.form-backdrop .add-todo-container .login-form-buttons .save-add-todo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  background-color: #ff9900;
+  height: 70px;
+  color: #ffffff;
+  font-size: 20px;
+  margin-top: 26px;
+  border-radius: 8px;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  height: 40px;
+  width: 100px;
+  margin: 0 10px 10px 0;
+}
+
+.form-backdrop .add-todo-container .login-form-buttons .save-add-todo-button:hover {
+  background-color: #1a1a1a;
+  color: #ff9900;
+}
+
+.form-backdrop .add-todo-container .add-todo-form {
+  width: 90%;
+}
+
+.form-backdrop .add-todo-container .task-form {
+  width: 90%;
+}
+
+.form-backdrop .add-todo-container .add-todo-name-input {
+  text-indent: 10px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  margin-top: 20px;
 }
 
 * {

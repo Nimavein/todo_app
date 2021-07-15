@@ -8,9 +8,13 @@ const Filter = () => {
   };
   return (
     <div>
-      <h3>filter</h3>
       <form>
-        <input onChange={handleFilter} value={filterPhrase} />
+        <input
+          className="search-input"
+          placeholder="Search"
+          onChange={handleFilter}
+          value={filterPhrase}
+        />
       </form>
     </div>
   );

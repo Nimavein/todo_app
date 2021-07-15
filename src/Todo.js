@@ -25,24 +25,8 @@ const Todo = ({ id, name, task }) => {
   return (
     <div>
       <h1>{name}</h1>
-      {task &&
-        task.map((singleTask) => {
-          return (
-            <Task
-              key={singleTask.name}
-              {...singleTask}
-              todoId={id}
-              todoName={name}
-              todoTasks={task}
-            />
-          );
-        })}
 
       <button onClick={(e) => deleteTodo(id)}>delete</button>
-      {/*}      {tasks.map((task) => {
-        return <Task key={task.id} {...task} />;
-      })}
-    */}
       <button onClick={() => handleEditVisibility()}>edit</button>
       {isEditOpen && (
         <TodoEditForm

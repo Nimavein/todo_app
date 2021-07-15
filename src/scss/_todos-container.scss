@@ -1,0 +1,35 @@
+.todos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .content {
+    width: 80%;
+    height: 100%;
+    margin-top: 50px;
+  }
+}
+
+.search-input {
+  text-indent: 10px;
+  margin-bottom: 30px;
+  height: 40px;
+  width: 30vw;
+  border-radius: $border-radius;
+  border: none;
+  margin-right: 200px;
+}
+
+.filter-sort {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-todo-button {
+  position: fixed;
+  bottom: 20px;
+  right: 10%;
+  height: 80px;
+  cursor: pointer;
+}

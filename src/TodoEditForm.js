@@ -2,14 +2,14 @@ import { useGlobalContext } from "./context";
 import React, { useState, useEffect } from "react";
 import TaskForm from "./TaskForm";
 import axios from "axios";
+import Task from "./Task";
 
-const TodoEditForm = ({ id, handleEditVisibility, name }) => {
+const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
   const [todoEditData, setTodoEditData] = useState();
-  const { setTodoList, jwt } = useGlobalContext();
+  const { setTodoList, jwt, todoList } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
   const [todoName] = useState(name);
-  const [oldTasks, setOldTasks] = useState([]);
 
   const handleFormChange = (e) => {
     setTodoEditData({
@@ -18,25 +18,12 @@ const TodoEditForm = ({ id, handleEditVisibility, name }) => {
     });
   };
 
-  useEffect(() => {
-    axios
-      .get(`https://recruitment.ultimate.systems/to-do-lists/${id}`, {
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-        },
-      })
-      .then((response) => {
-        console.log(response.data.task);
-        setOldTasks(response.data.task);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
-
   const handleEditTodo = (e) => {
     e.preventDefault();
     console.log(todoName);
+    let allTodos = [...todoList];
+    const todoTasks = allTodos.find((x) => x.id === id).task;
+    console.log(todoTasks);
     // Request API.
     const config = {
       headers: { Authorization: `Bearer ${jwt}` },
@@ -46,7 +33,7 @@ const TodoEditForm = ({ id, handleEditVisibility, name }) => {
       ...(typeof todoEditData !== "undefined" && {
         name: todoEditData.name,
       }),
-      task: [...allTasksToAddData, ...oldTasks],
+      task: [...allTasksToAddData, ...todoTasks],
     };
     axios
       .put(
@@ -82,6 +69,19 @@ const TodoEditForm = ({ id, handleEditVisibility, name }) => {
             <input onChange={handleFormChange} type="text" id="name" />
           </label>
         </div>
+
+        {task &&
+          task.map((singleTask) => {
+            return (
+              <Task
+                key={singleTask.name}
+                {...singleTask}
+                todoId={id}
+                todoName={name}
+                todoTasks={task}
+              />
+            );
+          })}
 
         <div className="login-form-buttons">
           <button>edit</button>

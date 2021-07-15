@@ -14,45 +14,16 @@ const Task = ({ name, isDone, id, todoId, todoName }) => {
     const changedTodoTasks = allTodos.find((x) => x.id === todoId).task;
     console.log(changedTodoTasks);
     setTodoList(allTodos);
-
-    const config = {
-      headers: { Authorization: `Bearer ${jwt}` },
-    };
-    const bodyParameters = {
-      name: todoName,
-      task: changedTodoTasks,
-    };
-    axios
-      .put(
-        `https://recruitment.ultimate.systems/to-do-lists/${todoId}`,
-        bodyParameters,
-        config
-      )
-      .then((response) => {
-        axios
-          .get("https://recruitment.ultimate.systems/to-do-lists", {
-            headers: {
-              Authorization: `Bearer ${jwt}`,
-            },
-          })
-          .then((response) => {
-            setTodoList(response.data);
-          });
-
-        console.log(todoList);
-      });
   };
 
   return (
     <div>
+      <input
+        type="checkbox"
+        checked={isTaskDone}
+        onChange={handleCheckboxChange}
+      />
       {name}
-      <label>
-        <input
-          type="checkbox"
-          checked={isTaskDone}
-          onChange={handleCheckboxChange}
-        />
-      </label>
     </div>
   );
 };
