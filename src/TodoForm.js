@@ -5,7 +5,7 @@ import axios from "axios";
 
 const TodoForm = () => {
   const [todoData, setTodoData] = useState();
-  const { fetchData, token, todoList, setTodoList, jwt } = useGlobalContext();
+  const { setTodoList, jwt } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
 
@@ -19,13 +19,10 @@ const TodoForm = () => {
 
   const handleAddTodo = (e) => {
     e.preventDefault();
-    // Request API.
     const config = {
       headers: { Authorization: `Bearer ${jwt}` },
     };
     const bodyParameters = { name: todoData.name, task: todoData.task };
-    console.log(config);
-    console.log(bodyParameters);
     axios
       .post(
         "https://recruitment.ultimate.systems/to-do-lists",
@@ -34,7 +31,6 @@ const TodoForm = () => {
       )
       .then((response) => {
         // Handle success.
-
         axios
           .get("https://recruitment.ultimate.systems/to-do-lists", {
             headers: {
@@ -45,9 +41,6 @@ const TodoForm = () => {
             setTodoList(response.data);
           });
         setAllTasksToAddData([]);
-        console.log(todoList);
-        console.log("Well done!");
-        console.log("To-do-list name", response.data.name);
       })
       .catch((error) => {
         // Handle error.

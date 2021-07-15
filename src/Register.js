@@ -6,15 +6,12 @@ import { useHistory } from "react-router";
 const Register = () => {
   const history = useHistory();
   const [registrationData, setRegistrationData] = useState();
-  // Request API.
-  // Add your own code here to customize or restrict how the public can register new users.
 
   const handleFormChange = (e) => {
     setRegistrationData({
       ...registrationData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
-    console.log(registrationData);
   };
 
   const handleRegistration = (e) => {
@@ -26,14 +23,9 @@ const Register = () => {
         password: registrationData.password,
       })
       .then((response) => {
-        // Handle success.
-        console.log("Well done!");
-        console.log("User profile", response.data.user);
-        console.log("User token", response.data.jwt);
         history.push("/");
       })
       .catch((error) => {
-        // Handle error.
         console.log("An error occurred:", error.response);
       });
   };

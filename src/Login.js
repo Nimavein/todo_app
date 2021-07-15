@@ -30,7 +30,6 @@ const Login = () => {
       );
       setJwt(response.data.jwt);
       localStorage.setItem("jwt", response.data.jwt);
-      console.log("resp", response);
       if (!response.data.user) {
         throw "Cannot login. Please try again.";
       }

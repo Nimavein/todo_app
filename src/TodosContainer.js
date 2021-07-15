@@ -8,22 +8,17 @@ import axios from "axios";
 import Sort from "./Sort";
 
 const TodosContainer = () => {
-  const {
-    todoList,
-    setTodoList,
-    filteredTodos,
-    filterPhrase,
-    jwt,
-    sortedBy,
-    setSortedBy,
-  } = useGlobalContext();
+  const { todoList, setTodoList, filteredTodos, filterPhrase, sortedBy } =
+    useGlobalContext();
+
+  const token = localStorage.getItem("jwt");
 
   useEffect(async () => {
     const data = await axios.get(
       "https://recruitment.ultimate.systems/to-do-lists",
       {
         headers: {
-          Authorization: `Bearer ${jwt}`,
+          Authorization: `Bearer ${token}`,
         },
       }
     );

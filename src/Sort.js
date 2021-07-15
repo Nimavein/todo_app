@@ -3,7 +3,7 @@ import { useGlobalContext } from "./context";
 
 const Sort = () => {
   const { todoList, setTodoList, setSortedBy } = useGlobalContext();
-  const [sortedById, setSortedById] = useState(false);
+  const [sortedById, setSortedById] = useState(true);
   const [sortedByName, setSortedByName] = useState(false);
 
   const handleSort = (byWhat) => {
