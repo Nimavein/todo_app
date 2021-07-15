@@ -359,6 +359,10 @@
           backdrop-filter: blur(5px);
 }
 
+.form-backdrop input[type="checkbox"] {
+  display: none;
+}
+
 .form-backdrop .add-todo-container {
   background-color: #2d2d2d;
   height: 90%;
@@ -491,6 +495,12 @@
       -ms-flex-pack: end;
           justify-content: flex-end;
   margin-top: 20px;
+}
+
+.form-backdrop .add-todo-container .task-form-container .task-form .checkbox-input input[type="checkbox"] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form-backdrop .add-todo-container .task-form-container .task-form .checkbox-input .add-task-input {

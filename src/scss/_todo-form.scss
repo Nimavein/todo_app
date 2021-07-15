@@ -1,5 +1,8 @@
 .form-backdrop {
   @include backdrop;
+  input[type="checkbox"] {
+    display: none;
+  }
   .add-todo-container {
     background-color: $secondary-background;
     height: 90%;
@@ -63,6 +66,9 @@
           display: flex;
           justify-content: flex-end;
           margin-top: 20px;
+          input[type="checkbox"] {
+            display: flex;
+          }
 
           .add-task-input {
             width: 90%;
