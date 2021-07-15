@@ -15,7 +15,6 @@ const Login = () => {
       ...loginData,
       [e.currentTarget.id]: e.currentTarget.value,
     });
-    console.log(loginData);
   };
 
   const handleLogin = async (e) => {

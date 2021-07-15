@@ -36,7 +36,7 @@ const TaskForm = ({
   return (
     <div>
       {allTasksToAddData.map((task) => {
-        return <Task key={task.name} {...task} />;
+        return <Task key={task.name} {...task} taskData={taskData} />;
       })}
       <form onSubmit={(e) => handleAddTask(e, taskData)}>
         <div>

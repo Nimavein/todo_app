@@ -4,7 +4,7 @@ import Task from "./Task";
 import axios from "axios";
 import TodoEditForm from "./TodoEditForm";
 
-const Todo = ({ id, name, tasks, task }) => {
+const Todo = ({ id, name, task }) => {
   const { todoList, setTodoList, jwt } = useGlobalContext();
   const [isEditOpen, setIsEditOpen] = useState(false);
 
@@ -27,7 +27,15 @@ const Todo = ({ id, name, tasks, task }) => {
       <h1>{name}</h1>
       {task &&
         task.map((singleTask) => {
-          return <Task key={singleTask.name} {...singleTask} />;
+          return (
+            <Task
+              key={singleTask.name}
+              {...singleTask}
+              todoId={id}
+              todoName={name}
+              todoTasks={task}
+            />
+          );
         })}
 
       <button onClick={(e) => deleteTodo(id)}>delete</button>
