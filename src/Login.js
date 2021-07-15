@@ -51,32 +51,37 @@ const Login = () => {
       {errorMsg && <p>{errorMsg}</p>}
       <h1>Login form</h1>
       {!jwt && (
-        <form onSubmit={(e) => handleLogin(e, loginData)}>
-          <div>
-            <label>
-              Username or email:
-              <input
-                onChange={handleFormChange}
-                required
-                type="text"
-                id="identifier"
-              />
-            </label>
-            <label>
-              Password:
-              <input
-                onChange={handleFormChange}
-                required
-                type="password"
-                id="password"
-              />
-            </label>
-          </div>
+        <div>
+          <form onSubmit={(e) => handleLogin(e, loginData)}>
+            <div>
+              <label>
+                Username or email:
+                <input
+                  onChange={handleFormChange}
+                  required
+                  type="text"
+                  id="identifier"
+                />
+              </label>
+              <label>
+                Password:
+                <input
+                  onChange={handleFormChange}
+                  required
+                  type="password"
+                  id="password"
+                />
+              </label>
+            </div>
 
-          <div className="login-form-buttons">
-            <button>Login</button>
-          </div>
-        </form>
+            <div className="login-form-buttons">
+              <button>Login</button>
+            </div>
+          </form>
+          <button>
+            <Link to="/register">Register</Link>
+          </button>
+        </div>
       )}
       {jwt && (
         <div>

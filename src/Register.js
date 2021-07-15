@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import { useHistory } from "react-router";
 
 const Register = () => {
+  const history = useHistory();
   const [registrationData, setRegistrationData] = useState();
   // Request API.
   // Add your own code here to customize or restrict how the public can register new users.
@@ -27,6 +30,7 @@ const Register = () => {
         console.log("Well done!");
         console.log("User profile", response.data.user);
         console.log("User token", response.data.jwt);
+        history.push("/");
       })
       .catch((error) => {
         // Handle error.
@@ -73,6 +77,7 @@ const Register = () => {
           <button type="button">Cancel</button>
         </div>
       </form>
+      <Link to="/">Login</Link>
     </div>
   );
 };

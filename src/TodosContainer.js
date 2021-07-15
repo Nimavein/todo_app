@@ -5,10 +5,18 @@ import { Link } from "react-router-dom";
 import TodoForm from "./TodoForm";
 import Filter from "./Filter";
 import axios from "axios";
+import Sort from "./Sort";
 
 const TodosContainer = () => {
-  const { todoList, setTodoList, filteredTodos, filterPhrase, jwt } =
-    useGlobalContext();
+  const {
+    todoList,
+    setTodoList,
+    filteredTodos,
+    filterPhrase,
+    jwt,
+    sortedBy,
+    setSortedBy,
+  } = useGlobalContext();
 
   useEffect(async () => {
     const data = await axios.get(
@@ -23,10 +31,13 @@ const TodosContainer = () => {
     console.log(data.data);
   }, []);
 
+  useEffect(() => {}, [sortedBy]);
+
   return (
     <div>
       <Link to="/">login page</Link>
       <Filter />
+      <Sort />
       {filterPhrase === ""
         ? todoList.map((todo) => {
             return <Todo key={todo.id} {...todo} />;
