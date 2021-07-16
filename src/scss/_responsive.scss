@@ -51,15 +51,16 @@
   .content {
     width: 80% !important;
   }
-}
 
-@include media-lg {
   .identifier-login-input,
   .password-login-input,
   .username-register-input,
   .email-register-input,
   .password-register-input,
   .repeat-password-register-input {
-    width: 450px !important;
+    width: 400px !important;
   }
+}
+
+@include media-lg {
 }
