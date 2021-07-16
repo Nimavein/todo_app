@@ -34,7 +34,7 @@ function PrivateRoute({ children, ...rest }) {
 
 const App = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
       <Switch>
         <Route exact path="/" component={Login} />
