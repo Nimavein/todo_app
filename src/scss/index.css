@@ -1,7 +1,7 @@
 @media screen and (max-width: 768px) {
   .register-form,
   .login-form {
-    height: 600px !important;
+    height: 580px !important;
     width: 90% !important;
   }
   .register-form .username-register-input,
@@ -16,15 +16,14 @@
   .login-form .repeat-password-register-input,
   .login-form .identifier-login-input,
   .login-form .password-login-input {
-    width: 280px !important;
+    width: 230px !important;
   }
-  .identifier-login-input,
-  .password-login-input,
-  .username-register-input,
-  .email-register-input,
-  .password-register-input,
-  .repeat-password-register-input {
-    width: 250px !important;
+  .register-form .login-button,
+  .login-form .login-button {
+    height: 50px !important;
+  }
+  .or-text {
+    margin: 30px 0 30px 0 !important;
   }
   .tasks-numbers {
     -webkit-box-orient: vertical;

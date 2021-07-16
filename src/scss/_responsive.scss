@@ -1,7 +1,7 @@
 @include media-sm {
   .register-form,
   .login-form {
-    height: 600px !important;
+    height: 580px !important;
     width: 90% !important;
     .username-register-input,
     .email-register-input,
@@ -9,19 +9,15 @@
     .repeat-password-register-input,
     .identifier-login-input,
     .password-login-input {
-      width: 280px !important;
+      width: 230px !important;
+    }
+    .login-button {
+      height: 50px !important;
     }
   }
-
-  .identifier-login-input,
-  .password-login-input,
-  .username-register-input,
-  .email-register-input,
-  .password-register-input,
-  .repeat-password-register-input {
-    width: 250px !important;
+  .or-text {
+    margin: 30px 0 30px 0 !important;
   }
-
   .tasks-numbers {
     flex-direction: column;
   }
