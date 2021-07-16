@@ -1,8 +1,8 @@
 @media screen and (max-width: 768px) {
   .register-form,
   .login-form {
-    height: 500px !important;
-    width: 80% !important;
+    height: 600px !important;
+    width: 90% !important;
   }
   .register-form .username-register-input,
   .register-form .email-register-input,
