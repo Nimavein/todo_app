@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
@@ -32,6 +32,12 @@ const Register = () => {
         });
     }
   };
+
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("jwt") === true) {
+      history.push("/to-do-lists");
+    }
+  }, []);
 
   return (
     <div className="register-page">

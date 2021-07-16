@@ -5,18 +5,19 @@ import { useHistory } from "react-router";
 import logout from "./images/logout.png";
 
 const Navbar = () => {
-  const { setJwt } = useGlobalContext();
+  const { setJwt, setOrder } = useGlobalContext();
   const token = localStorage.getItem("jwt");
   const history = useHistory();
   const handleLogout = async () => {
     localStorage.removeItem("jwt");
     setJwt("");
+    setOrder(false);
     history.push("/");
   };
 
   return (
     <div className="navbar">
-      <p className="logo">ToDo-list</p>
+      <p className="logo">ToDo-List</p>
       {token && (
         <div>
           <img className="logout-button" src={logout} onClick={handleLogout} />

@@ -17,6 +17,12 @@ const Login = () => {
     });
   };
 
+  useEffect(() => {
+    if (localStorage.hasOwnProperty("jwt") === true) {
+      history.push("/to-do-lists");
+    }
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     setErrorMsg(null);
@@ -43,7 +49,7 @@ const Login = () => {
   useEffect(() => {
     const timeout = setTimeout(() => {
       setErrorMsg(null);
-    }, 3000);
+    }, 2000);
 
     return () => clearTimeout(timeout);
   }, [errorMsg]);

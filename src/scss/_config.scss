@@ -3,6 +3,7 @@ $secondary-background: #2d2d2d;
 $primary-color: #ff9900;
 $text-color: #ffffff;
 $border-radius: 8px;
+$error-color: rgb(197, 6, 6);
 
 @mixin button-no-background {
   background: none;

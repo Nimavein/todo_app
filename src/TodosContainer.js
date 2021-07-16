@@ -26,7 +26,6 @@ const TodosContainer = () => {
       }
     );
     setTodoList(data.data);
-    console.log(data.data);
   }, []);
 
   useEffect(() => {}, [sortedBy]);
@@ -37,6 +36,7 @@ const TodosContainer = () => {
 
   return (
     <div className="todos-container">
+      {todoList.length === 0 && "Your list is empty"}
       <div className="content">
         {" "}
         <div className="filter-sort">

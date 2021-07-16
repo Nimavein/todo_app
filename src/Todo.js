@@ -27,7 +27,7 @@ const Todo = ({ id, name, task, created_at }) => {
 
   return (
     <div>
-      <div onClick={() => handleEditVisibility()} className="todo">
+      <div onClick={handleEditVisibility} className="todo">
         <p className="todo-name">{name}</p>
         <p className="todo-create-date">{`Created at: ${whenCreated}`}</p>
         <div className="tasks-numbers">

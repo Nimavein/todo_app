@@ -604,6 +604,12 @@ option[value=""][disabled] {
           box-shadow: none;
 }
 
+.add-todo-error {
+  font-weight: 600;
+  margin-top: 100px;
+  color: #c50606;
+}
+
 .todo {
   display: -webkit-box;
   display: -ms-flexbox;

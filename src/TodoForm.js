@@ -1,5 +1,5 @@
 import { useGlobalContext } from "./context";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TaskForm from "./TaskForm";
 import axios from "axios";
 
@@ -8,6 +8,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
   const { setTodoList, jwt, setOrder } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleFormChange = (e) => {
     setTodoData({
@@ -18,37 +19,49 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
   };
 
   const handleAddTodo = (e) => {
-    e.preventDefault();
-    const config = {
-      headers: { Authorization: `Bearer ${jwt}` },
-    };
-    const bodyParameters = { name: todoData.name, task: todoData.task };
-    axios
-      .post(
-        "https://recruitment.ultimate.systems/to-do-lists",
-        bodyParameters,
-        config
-      )
-      .then((response) => {
-        // Handle success.
-        axios
-          .get("https://recruitment.ultimate.systems/to-do-lists", {
-            headers: {
-              Authorization: `Bearer ${jwt}`,
-            },
-          })
-          .then((response) => {
-            setTodoList(response.data);
-          });
-        setAllTasksToAddData([]);
-        setOrder(false);
-        handleAddTodoVisibility();
-      })
-      .catch((error) => {
-        // Handle error.
-        console.log("An error occurred:", error.response);
-      });
+    if (todoData) {
+      e.preventDefault();
+      const config = {
+        headers: { Authorization: `Bearer ${jwt}` },
+      };
+      const bodyParameters = { name: todoData.name, task: todoData.task };
+      axios
+        .post(
+          "https://recruitment.ultimate.systems/to-do-lists",
+          bodyParameters,
+          config
+        )
+        .then((response) => {
+          // Handle success.
+          axios
+            .get("https://recruitment.ultimate.systems/to-do-lists", {
+              headers: {
+                Authorization: `Bearer ${jwt}`,
+              },
+            })
+            .then((response) => {
+              setTodoList(response.data);
+            });
+          setAllTasksToAddData([]);
+          setOrder(false);
+          handleAddTodoVisibility();
+        })
+        .catch((error) => {
+          // Handle error.
+          console.log("An error occurred:", error.response);
+        });
+    } else {
+      setErrorMessage("List must have a name");
+    }
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setErrorMessage(null);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [errorMessage]);
 
   return (
     <div className="form-backdrop">
@@ -73,6 +86,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
           allTasksToAddData={allTasksToAddData}
           setAllTasksToAddData={setAllTasksToAddData}
         />
+        {errorMessage && <p className="add-todo-error">{errorMessage}</p>}
         <div className="add-todo-form-buttons">
           <button
             className="cancel-add-todo-button"
@@ -82,6 +96,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
             Cancel
           </button>
           <button
+            type="submit"
             onClick={(e) => handleAddTodo(e, todoData)}
             form="add-todo-form"
             className="save-add-todo-button"

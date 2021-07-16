@@ -88,3 +88,9 @@
     box-shadow: none;
   }
 }
+
+.add-todo-error {
+  font-weight: 600;
+  margin-top: 100px;
+  color: $error-color;
+}

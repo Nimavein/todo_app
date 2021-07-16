@@ -15,7 +15,6 @@ const TaskForm = ({
       ...taskData,
       isDone: checked,
     });
-    console.log(taskData);
   };
 
   const handleFormChange = (e) => {
@@ -24,13 +23,11 @@ const TaskForm = ({
       isDone: !checked,
       [e.currentTarget.id]: e.currentTarget.value,
     });
-    console.log(taskData);
   };
 
   const handleAddTask = (e) => {
     e.preventDefault();
     setAllTasksToAddData([...allTasksToAddData, taskData]);
-    console.log(allTasksToAddData);
   };
 
   return (

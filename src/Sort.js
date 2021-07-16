@@ -68,7 +68,7 @@ const Sort = () => {
         className={
           order === false ? "change-sort-button" : "change-sort-button open"
         }
-        onClick={() => changeOrder()}
+        onClick={changeOrder}
       >
         <FaChevronDown className="arrow-icon" />
       </button>

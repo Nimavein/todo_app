@@ -20,10 +20,8 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
 
   const handleEditTodo = (e) => {
     e.preventDefault();
-    console.log(todoName);
     let allTodos = [...todoList];
     const todoTasks = allTodos.find((x) => x.id === id).task;
-    console.log(todoTasks);
     // Request API.
     const config = {
       headers: { Authorization: `Bearer ${jwt}` },
@@ -53,7 +51,6 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
           });
         setOrder(false);
         handleEditVisibility();
-        console.log(response);
       })
       .catch((error) => {
         console.log(error);

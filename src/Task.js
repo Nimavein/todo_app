@@ -12,7 +12,6 @@ const Task = ({ name, isDone, id, todoId, todoName }) => {
     allTodos.find((x) => x.id === todoId).task.find((i) => i.id === id).isDone =
       !isTaskDone;
     const changedTodoTasks = allTodos.find((x) => x.id === todoId).task;
-    console.log(changedTodoTasks);
     setTodoList(allTodos);
   };
 
