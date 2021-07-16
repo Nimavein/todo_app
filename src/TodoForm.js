@@ -5,7 +5,7 @@ import axios from "axios";
 
 const TodoForm = ({ handleAddTodoVisibility }) => {
   const [todoData, setTodoData] = useState();
-  const { setTodoList, jwt } = useGlobalContext();
+  const { setTodoList, jwt, setOrder } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
 
@@ -41,6 +41,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
             setTodoList(response.data);
           });
         setAllTasksToAddData([]);
+        setOrder(false);
         handleAddTodoVisibility();
       })
       .catch((error) => {
@@ -54,7 +55,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
       <div className="add-todo-container">
         <form className="add-todo-form" id="add-form">
           <input
-            class="add-todo-name-input"
+            className="add-todo-name-input"
             onChange={handleFormChange}
             required
             type="text"

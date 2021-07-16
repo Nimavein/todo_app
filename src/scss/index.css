@@ -304,6 +304,10 @@
   text-indent: 10px;
 }
 
+.invalid-data {
+  color: #c50606;
+}
+
 .todos-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -334,7 +338,6 @@
   width: 30vw;
   border-radius: 8px;
   border: none;
-  margin-right: 200px;
 }
 
 .filter-sort {
@@ -354,8 +357,46 @@
   cursor: pointer;
 }
 
+.sort-input {
+  height: 40px;
+  width: 150px;
+  border-radius: 8px;
+  text-indent: 54px;
+  z-index: 2;
+  position: relative;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+option[value=""][disabled] {
+  display: none;
+}
+
+.change-sort-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #2d2d2d;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  margin-right: -24px;
+  z-index: 3;
+  position: relative;
+}
+
+.change-sort-button.open {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
 .form-backdrop {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   height: 100%;
@@ -630,6 +671,7 @@
 
 .edit-form-backdrop {
   position: fixed;
+  z-index: 100;
   top: 0;
   left: 0;
   height: 100%;

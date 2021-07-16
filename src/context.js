@@ -7,6 +7,7 @@ const AppProvider = ({ children }) => {
   const [filterPhrase, setFilterPhrase] = useState("");
   const [jwt, setJwt] = useState();
   const [sortedBy, setSortedBy] = useState();
+  const [order, setOrder] = useState(false);
 
   let filteredTodos = todoList.filter((todo) =>
     todo.name.includes(filterPhrase)
@@ -31,6 +32,8 @@ const AppProvider = ({ children }) => {
         setJwt,
         sortedBy,
         setSortedBy,
+        order,
+        setOrder,
       }}
     >
       {children}

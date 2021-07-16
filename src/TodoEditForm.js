@@ -6,7 +6,7 @@ import Task from "./Task";
 
 const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
   const [todoEditData, setTodoEditData] = useState();
-  const { setTodoList, jwt, todoList } = useGlobalContext();
+  const { setTodoList, jwt, todoList, setOrder } = useGlobalContext();
   const [taskData, setTaskData] = useState({});
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
   const [todoName] = useState(name);
@@ -51,6 +51,7 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
           .then((response) => {
             setTodoList(response.data);
           });
+        setOrder(false);
         handleEditVisibility();
         console.log(response);
       })

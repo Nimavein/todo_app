@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router";
 import { Link } from "react-router-dom";
 import { useGlobalContext } from "./context";
@@ -36,13 +36,20 @@ const Login = () => {
 
       history.push("/to-do-lists");
     } catch (err) {
-      console.log(err);
+      setErrorMsg(true);
     }
   };
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setErrorMsg(null);
+    }, 3000);
+
+    return () => clearTimeout(timeout);
+  }, [errorMsg]);
+
   return (
     <div className="login-page">
-      {errorMsg && <p>{errorMsg}</p>}
       <form className="login-form" onSubmit={(e) => handleLogin(e, loginData)}>
         <h1 className="login-title">Login</h1>
         <div className="login-inputs">
@@ -64,7 +71,7 @@ const Login = () => {
             placeholder="Password"
           />
         </div>
-
+        {errorMsg && <p className="invalid-data">Invalid login data</p>}
         <div className="login-form-buttons">
           <button className="login-button">Login</button>
         </div>
