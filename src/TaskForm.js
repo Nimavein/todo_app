@@ -37,7 +37,15 @@ const TaskForm = ({
       })}
       <form className="task-form" onSubmit={(e) => handleAddTask(e, taskData)}>
         <div className="checkbox-input">
-          <input type="checkbox" onChange={handleCheckboxChange} />
+          <label>
+            <input
+              className="task-checkbox"
+              type="checkbox"
+              onChange={handleCheckboxChange}
+            />
+            <span></span>
+          </label>
+
           <input
             className="add-task-input"
             onChange={handleFormChange}

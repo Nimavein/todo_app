@@ -15,12 +15,15 @@ const Task = ({ name, isDone, id, todoId, todoName }) => {
 
   return (
     <div className="single-task">
-      <input
-        className="task-checkbox"
-        type="checkbox"
-        checked={isTaskDone}
-        onChange={handleCheckboxChange}
-      />
+      <label>
+        <input
+          className="task-checkbox"
+          type="checkbox"
+          checked={isTaskDone}
+          onChange={handleCheckboxChange}
+        />
+        <span></span>
+      </label>
 
       <p className="task-name">{name}</p>
     </div>
