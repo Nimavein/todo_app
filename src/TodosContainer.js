@@ -1,7 +1,6 @@
 import { useGlobalContext } from "./context";
 import React, { useState, useEffect } from "react";
 import Todo from "./Todo";
-import { Link } from "react-router-dom";
 import TodoForm from "./TodoForm";
 import Filter from "./Filter";
 import axios from "axios";

@@ -8,7 +8,7 @@ const Login = () => {
   const history = useHistory();
   const [loginData, setLoginData] = useState();
   const [errorMsg, setErrorMsg] = useState(null);
-  const { jwt, setJwt } = useGlobalContext();
+  const { setJwt } = useGlobalContext();
 
   const handleFormChange = (e) => {
     setLoginData({
@@ -21,7 +21,7 @@ const Login = () => {
     if (localStorage.hasOwnProperty("jwt") === true) {
       history.push("/to-do-lists");
     }
-  }, []);
+  }, [history]);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -37,7 +37,7 @@ const Login = () => {
       setJwt(response.data.jwt);
       localStorage.setItem("jwt", response.data.jwt);
       if (!response.data.user) {
-        throw "Cannot login. Please try again.";
+        throw new Error("Cannot login. Please try again.");
       }
 
       history.push("/to-do-lists");

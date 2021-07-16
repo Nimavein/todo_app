@@ -1,6 +1,5 @@
 import React from "react";
 import { useGlobalContext } from "./context";
-import { Link } from "react-router-dom";
 import { useHistory } from "react-router";
 import logout from "./images/logout.png";
 
@@ -20,7 +19,12 @@ const Navbar = () => {
       <p className="logo">ToDo-List</p>
       {token && (
         <div>
-          <img className="logout-button" src={logout} onClick={handleLogout} />
+          <img
+            alt="logout"
+            className="logout-button"
+            src={logout}
+            onClick={handleLogout}
+          />
         </div>
       )}
     </div>

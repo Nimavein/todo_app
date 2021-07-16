@@ -37,7 +37,7 @@ const Register = () => {
     if (localStorage.hasOwnProperty("jwt") === true) {
       history.push("/to-do-lists");
     }
-  }, []);
+  }, [history]);
 
   return (
     <div className="register-page">
