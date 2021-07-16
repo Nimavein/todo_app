@@ -60,43 +60,57 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
   };
 
   return (
-    <div>
-      <h2>edit todo form</h2>
-      <form onSubmit={(e) => handleEditTodo(e, todoEditData)}>
-        <div>
+    <div className="edit-form-backdrop">
+      <div className="edit-todo-container">
+        <form id="edit-form" className="edit-todo-form">
           <input
+            className="edit-todo-name-input"
             onChange={handleFormChange}
-            placeholder="name"
+            placeholder={name}
             type="text"
             id="name"
           />
-        </div>
 
-        {task &&
-          task.map((singleTask) => {
-            return (
-              <Task
-                key={singleTask.name}
-                {...singleTask}
-                todoId={id}
-                todoName={name}
-                todoTasks={task}
-                isTaskAdded={true}
-              />
-            );
-          })}
+          <hr className="form-divider" />
 
-        <div className="login-form-buttons">
-          <button>edit</button>
+          {task &&
+            task.map((singleTask) => {
+              return (
+                <Task
+                  key={singleTask.name}
+                  {...singleTask}
+                  todoId={id}
+                  todoName={name}
+                  todoTasks={task}
+                  isTaskAdded={true}
+                />
+              );
+            })}
+        </form>
+        <TaskForm
+          handleFormChange={handleFormChange}
+          taskData={taskData}
+          setTaskData={setTaskData}
+          allTasksToAddData={allTasksToAddData}
+          setAllTasksToAddData={setAllTasksToAddData}
+        />
+        <div className="edit-form-buttons">
+          <button
+            className="cancel-edit-todo-button"
+            onClick={handleEditVisibility}
+            type="button"
+          >
+            Cancel
+          </button>
+          <button
+            onClick={(e) => handleEditTodo(e, todoEditData)}
+            form="add-todo-form"
+            className="save-edit-todo-button"
+          >
+            Save
+          </button>
         </div>
-      </form>
-      <TaskForm
-        handleFormChange={handleFormChange}
-        taskData={taskData}
-        setTaskData={setTaskData}
-        allTasksToAddData={allTasksToAddData}
-        setAllTasksToAddData={setAllTasksToAddData}
-      />
+      </div>
     </div>
   );
 };

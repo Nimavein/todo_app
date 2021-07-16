@@ -72,7 +72,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
           allTasksToAddData={allTasksToAddData}
           setAllTasksToAddData={setAllTasksToAddData}
         />
-        <div className="login-form-buttons">
+        <div className="add-todo-form-buttons">
           <button
             className="cancel-add-todo-button"
             onClick={handleAddTodoVisibility}

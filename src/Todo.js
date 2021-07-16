@@ -26,19 +26,21 @@ const Todo = ({ id, name, task, created_at }) => {
   };
 
   return (
-    <div onClick={() => handleEditVisibility()} className="todo">
-      <p className="todo-name">{name}</p>
-      <p className="todo-create-date">{`Created at: ${whenCreated}`}</p>
-      <div className="tasks-numbers">
-        <p className="completed-tasks-text">{`Completed: ${doneTasksNumber}`}</p>
-        <p className="uncompleted-tasks-text">{`Uncompleted: ${
-          allTasksNumber - doneTasksNumber
-        }`}</p>
-        <p className="all-tasks-text">{`All: ${allTasksNumber}`}</p>
+    <div>
+      <div onClick={() => handleEditVisibility()} className="todo">
+        <p className="todo-name">{name}</p>
+        <p className="todo-create-date">{`Created at: ${whenCreated}`}</p>
+        <div className="tasks-numbers">
+          <p className="completed-tasks-text">{`Completed: ${doneTasksNumber}`}</p>
+          <p className="uncompleted-tasks-text">{`Uncompleted: ${
+            allTasksNumber - doneTasksNumber
+          }`}</p>
+          <p className="all-tasks-text">{`All: ${allTasksNumber}`}</p>
+        </div>
+        <button className="todo-delete-button" onClick={(e) => deleteTodo(id)}>
+          <FaTrash className="delete-icon" />
+        </button>
       </div>
-      <button className="todo-delete-button" onClick={(e) => deleteTodo(id)}>
-        <FaTrash className="delete-icon" />
-      </button>
       {isEditOpen && (
         <TodoEditForm
           id={id}

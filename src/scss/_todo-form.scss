@@ -10,37 +10,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    .login-form-buttons {
+    .add-todo-form-buttons {
       margin-top: auto;
       width: 100%;
       display: flex;
       justify-content: space-between;
       .cancel-add-todo-button {
-        @include button-no-background;
-        color: $primary-color;
-        width: 150px;
-        text-transform: uppercase;
-        font-size: 24px;
-        margin: 0 0 20px 20px;
-        border-radius: $border-radius;
-        @include transition-ease;
-        &:hover {
-          background-color: $background-color;
-          color: $text-color;
-        }
+        @include cancel-edit-button;
       }
       .save-add-todo-button {
-        @include form-button;
-        height: 50px;
-        width: 150px;
-        margin: 0 20px 20px 0;
+        @include save-edit-todo-button;
       }
     }
     .form-divider {
-      border: none;
-      border-top: 2px solid $primary-color;
-      width: 90%;
-      margin-bottom: 26px;
+      @include form-divider;
     }
     .add-todo-form {
       width: 90%;
@@ -102,7 +85,7 @@
   margin-right: auto;
   .task-name {
     margin-left: 10px;
-    border-bottom: 1px solid $text-color;
+    border-bottom: 1px solid $primary-color;
     width: 100%;
     margin-bottom: 10px;
     text-indent: 10px;
