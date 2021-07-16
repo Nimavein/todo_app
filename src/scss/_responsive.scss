@@ -2,7 +2,7 @@
   .register-form,
   .login-form {
     height: 580px !important;
-    width: 90% !important;
+    width: 100% !important;
     .username-register-input,
     .email-register-input,
     .password-register-input,
@@ -11,8 +11,15 @@
     .password-login-input {
       width: 230px !important;
     }
-    .login-button {
+    .login-button,
+    .create-account-button {
       height: 50px !important;
+    }
+    .create-account-button {
+      margin-top: 10px !important;
+    }
+    .register-form-title {
+      margin: 20px 0 30px 0 !important;
     }
   }
   .or-text {
