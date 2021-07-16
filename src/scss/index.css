@@ -70,6 +70,17 @@
   }
 }
 
+@media screen and (max-width: 1600px) {
+  .identifier-login-input,
+  .password-login-input,
+  .username-register-input,
+  .email-register-input,
+  .password-register-input,
+  .repeat-password-register-input {
+    width: 500px !important;
+  }
+}
+
 .register-page {
   overflow: hidden;
   display: -webkit-box;

@@ -58,4 +58,12 @@
 }
 
 @include media-lg {
+  .identifier-login-input,
+  .password-login-input,
+  .username-register-input,
+  .email-register-input,
+  .password-register-input,
+  .repeat-password-register-input {
+    width: 500px !important;
+  }
 }
