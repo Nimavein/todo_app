@@ -1,6 +1,7 @@
 @media screen and (max-width: 768px) {
   .register-form,
   .login-form {
+    height: 500px !important;
     width: 80% !important;
   }
   .register-form .username-register-input,
@@ -16,6 +17,14 @@
   .login-form .identifier-login-input,
   .login-form .password-login-input {
     width: 280px !important;
+  }
+  .identifier-login-input,
+  .password-login-input,
+  .username-register-input,
+  .email-register-input,
+  .password-register-input,
+  .repeat-password-register-input {
+    width: 250px !important;
   }
   .tasks-numbers {
     -webkit-box-orient: vertical;
