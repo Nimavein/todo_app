@@ -9,6 +9,7 @@ import Login from "./Login";
 import Navbar from "./Navbar";
 import Register from "./Register";
 import TodosContainer from "./TodosContainer";
+import { HashRouter } from "react-router-dom";
 
 function PrivateRoute({ children, ...rest }) {
   const token = localStorage.getItem("jwt");
@@ -36,13 +37,13 @@ const App = () => {
   return (
     <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
-      <Switch>
+      <HashRouter>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/to-do-lists">
           <TodosContainer />
         </PrivateRoute>
-      </Switch>
+      </HashRouter>
     </Router>
   );
 };
