@@ -7,6 +7,7 @@ import Arrow1 from "./images/Arrow1.png";
 const Register = () => {
   const history = useHistory();
   const [registrationData, setRegistrationData] = useState();
+  const [errorMsg, setErrorMsg] = useState(null);
 
   const handleFormChange = (e) => {
     setRegistrationData({
@@ -30,6 +31,8 @@ const Register = () => {
         .catch((error) => {
           console.log("An error occurred:", error.response);
         });
+    } else {
+      setErrorMsg(true);
     }
   };
 
@@ -38,6 +41,14 @@ const Register = () => {
       history.push("/to-do-lists");
     }
   }, [history]);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setErrorMsg(null);
+    }, 2000);
+
+    return () => clearTimeout(timeout);
+  }, [errorMsg]);
 
   return (
     <div className="register-page">
@@ -89,6 +100,7 @@ const Register = () => {
             placeholder="Repeat password"
           />
         </div>
+        {errorMsg && <p className="invalid-data">Invalid registration data</p>}
 
         <div className="register-form-buttons">
           <button className="create-account-button">Create</button>
