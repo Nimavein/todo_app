@@ -56,15 +56,7 @@ const Sort = () => {
       setSortedBy("idDesc");
       setTodoList(sortedTodoList);
     }
-  }, [
-    selectedValue,
-    order,
-    setSortedBy,
-    setTodoList,
-    sortedByName,
-    todoList,
-    sortedById,
-  ]);
+  }, [selectedValue, order]);
 
   const changeOrder = () => {
     setOrder(!order);
