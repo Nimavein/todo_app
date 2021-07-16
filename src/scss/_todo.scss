@@ -1,0 +1,48 @@
+.todo {
+  display: flex;
+  background-color: $secondary-background;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 0;
+  border-radius: $border-radius;
+  padding-left: 20px;
+  align-items: center;
+  .tasks-numbers {
+    display: flex;
+    font-size: 14px;
+    justify-content: flex-end;
+    .completed-tasks-text,
+    .uncompleted-tasks-text,
+    .all-tasks-text {
+      margin-right: 10px;
+    }
+  }
+  .todo-create-date {
+    font-size: 14px;
+    width: 35%;
+    font-style: italic;
+    margin-right: 10px;
+  }
+  .todo-name {
+    width: 35%;
+    margin-right: 10px;
+  }
+
+  .todo-delete-button {
+    visibility: hidden;
+    display: flex;
+    margin-left: auto;
+    margin-right: 20px;
+    padding: 5px 0 5px 0;
+    @include button-no-background;
+    .delete-icon {
+      color: $primary-color;
+      height: 30px;
+      width: 30px;
+    }
+  }
+  &:hover {
+    .todo-delete-button {
+      visibility: visible;
+    }
+  }
+}

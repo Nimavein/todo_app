@@ -1,7 +1,10 @@
 .navbar {
+  position: fixed;
+  width: 100%;
   z-index: 0;
   display: flex;
   justify-content: space-between;
+  background-color: $background-color;
   .logo {
     font-family: "ZCOOL KuaiLe", cursive;
     padding: 10px 0 0 10px;

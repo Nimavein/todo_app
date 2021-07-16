@@ -17,6 +17,12 @@
   .login-form .password-login-input {
     width: 280px !important;
   }
+  .tasks-numbers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
   .navbar {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -40,12 +46,18 @@
   .add-todo-form {
     width: 80% !important;
   }
+  .todo-delete-button {
+    visibility: visible !important;
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .register-form,
   .login-form {
     width: 65% !important;
+  }
+  .content {
+    width: 80% !important;
   }
 }
 
@@ -140,6 +152,8 @@
 }
 
 .navbar {
+  position: fixed;
+  width: 100%;
   z-index: 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -147,6 +161,7 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  background-color: #1a1a1a;
 }
 
 .navbar .logo {
@@ -307,7 +322,7 @@
 }
 
 .todos-container .content {
-  width: 80%;
+  width: 60%;
   height: 100%;
   margin-top: 50px;
 }
@@ -340,7 +355,7 @@
 }
 
 .form-backdrop {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -546,6 +561,71 @@
   border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
+}
+
+.todo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #2d2d2d;
+  margin-bottom: 20px;
+  padding: 10px 0 10px 0;
+  border-radius: 8px;
+  padding-left: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.todo .tasks-numbers {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 14px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.todo .tasks-numbers .completed-tasks-text,
+.todo .tasks-numbers .uncompleted-tasks-text,
+.todo .tasks-numbers .all-tasks-text {
+  margin-right: 10px;
+}
+
+.todo .todo-create-date {
+  font-size: 14px;
+  width: 35%;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.todo .todo-name {
+  width: 35%;
+  margin-right: 10px;
+}
+
+.todo .todo-delete-button {
+  visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: auto;
+  margin-right: 20px;
+  padding: 5px 0 5px 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.todo .todo-delete-button .delete-icon {
+  color: #ff9900;
+  height: 30px;
+  width: 30px;
+}
+
+.todo:hover .todo-delete-button {
+  visibility: visible;
 }
 
 * {

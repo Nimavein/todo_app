@@ -11,6 +11,10 @@
       width: 280px !important;
     }
   }
+
+  .tasks-numbers {
+    flex-direction: column;
+  }
   .navbar {
     display: flex !important;
     align-items: center !important;
@@ -28,12 +32,18 @@
   .add-todo-form {
     width: 80% !important;
   }
+  .todo-delete-button {
+    visibility: visible !important;
+  }
 }
 
 @include media-md {
   .register-form,
   .login-form {
     width: 65% !important;
+  }
+  .content {
+    width: 80% !important;
   }
 }
 
