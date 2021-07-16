@@ -38,6 +38,9 @@ const App = () => {
     <Router basename={process.env.PUBLIC_URL}>
       <Navbar />
       <HashRouter>
+        <Route exact path="/login">
+          <Redirect to="/" />
+        </Route>
         <Route exact path="/" component={Login} />
         <Route exact path="/register" component={Register} />
         <PrivateRoute exact path="/to-do-lists">
