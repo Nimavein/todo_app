@@ -70,4 +70,7 @@
 }
 
 @include media-lg {
+  .add-todo-button {
+    right: 10% !important;
+  }
 }

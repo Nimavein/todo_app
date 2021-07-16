@@ -87,6 +87,12 @@
   }
 }
 
+@media screen and (max-width: 1600px) {
+  .add-todo-button {
+    right: 10% !important;
+  }
+}
+
 .register-page {
   overflow: hidden;
   display: -webkit-box;
@@ -348,7 +354,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
+  height: 90%;
 }
 
 .todos-container .content {
@@ -378,7 +384,7 @@
 .add-todo-button {
   position: fixed;
   bottom: 20px;
-  right: 10%;
+  right: 20%;
   height: 80px;
   cursor: pointer;
 }
