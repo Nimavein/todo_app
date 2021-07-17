@@ -26,13 +26,15 @@
     .repeat-password-register-input {
       margin-bottom: 30px;
       height: 50px;
-      width: 600px;
+      width: 60%;
       border-radius: $border-radius;
       border: none;
     }
     .register-inputs {
       display: flex;
       flex-direction: column;
+      width: 100%;
+      align-items: center;
     }
   }
 }

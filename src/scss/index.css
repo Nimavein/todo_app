@@ -4,20 +4,6 @@
     height: 580px !important;
     width: 90% !important;
   }
-  .register-form .username-register-input,
-  .register-form .email-register-input,
-  .register-form .password-register-input,
-  .register-form .repeat-password-register-input,
-  .register-form .identifier-login-input,
-  .register-form .password-login-input,
-  .login-form .username-register-input,
-  .login-form .email-register-input,
-  .login-form .password-register-input,
-  .login-form .repeat-password-register-input,
-  .login-form .identifier-login-input,
-  .login-form .password-login-input {
-    width: 280px !important;
-  }
   .register-form .login-button,
   .register-form .create-account-button,
   .login-form .login-button,
@@ -187,7 +173,7 @@
 .register-page .register-form .repeat-password-register-input {
   margin-bottom: 30px;
   height: 50px;
-  width: 600px;
+  width: 60%;
   border-radius: 8px;
   border: none;
 }
@@ -200,6 +186,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .navbar {
@@ -295,6 +285,10 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .login-page .login-form .login-inputs .identifier-login-input,
@@ -304,6 +298,7 @@
   width: 600px;
   border-radius: 8px;
   border: none;
+  width: 60%;
 }
 
 .login-page .login-form .or-text {

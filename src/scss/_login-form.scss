@@ -14,6 +14,8 @@
     .login-inputs {
       display: flex;
       flex-direction: column;
+      width: 100%;
+      align-items: center;
       .identifier-login-input,
       .password-login-input {
         margin-bottom: 30px;
@@ -21,6 +23,7 @@
         width: 600px;
         border-radius: $border-radius;
         border: none;
+        width: 60%;
       }
     }
     .or-text {
