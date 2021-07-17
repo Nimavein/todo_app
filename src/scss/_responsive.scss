@@ -55,6 +55,16 @@
   .logo {
     font-size: 48px !important;
   }
+  .sort-input {
+    width: 100px !important;
+    text-indent: 34px !important;
+  }
+  .content {
+    width: 80% !important;
+  }
+  .add-todo-button {
+    right: 10% !important;
+  }
 }
 
 @include media-md {
@@ -74,10 +84,10 @@
   .repeat-password-register-input {
     width: 400px !important;
   }
-}
-
-@include media-lg {
   .add-todo-button {
     right: 10% !important;
   }
+}
+
+@include media-lg {
 }

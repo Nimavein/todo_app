@@ -74,6 +74,16 @@
   .logo {
     font-size: 48px !important;
   }
+  .sort-input {
+    width: 100px !important;
+    text-indent: 34px !important;
+  }
+  .content {
+    width: 80% !important;
+  }
+  .add-todo-button {
+    right: 10% !important;
+  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 769px) {
@@ -92,9 +102,6 @@
   .repeat-password-register-input {
     width: 400px !important;
   }
-}
-
-@media screen and (max-width: 1600px) and (min-width: 1025px) {
   .add-todo-button {
     right: 10% !important;
   }
