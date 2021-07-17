@@ -65,7 +65,7 @@ const Login = () => {
             required
             type="text"
             id="identifier"
-            placeholder="Username or email:"
+            placeholder="Email or Username"
           />
 
           <input
