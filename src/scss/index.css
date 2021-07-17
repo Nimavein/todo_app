@@ -441,7 +441,8 @@ option[value=""][disabled] {
 }
 
 .no-list-text {
-  margin-top: 200px !important;
+  color: #ff9900;
+  margin-top: 25vh;
 }
 
 .form-backdrop {
