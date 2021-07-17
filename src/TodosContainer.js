@@ -35,7 +35,6 @@ const TodosContainer = () => {
 
   return (
     <div className="todos-container">
-      {todoList.length === 0 && "Your list is empty"}
       <div className="content">
         {" "}
         <div className="filter-sort">
@@ -73,6 +72,9 @@ const TodosContainer = () => {
           <TodoForm handleAddTodoVisibility={handleAddTodoVisibility} />
         )}
       </div>
+      {todoList.length === 0 && (
+        <h2 className="no-list-text">You have no active list</h2>
+      )}
     </div>
   );
 };
