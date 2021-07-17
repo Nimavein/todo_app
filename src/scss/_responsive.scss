@@ -2,14 +2,14 @@
   .register-form,
   .login-form {
     height: 580px !important;
-    width: 100% !important;
+    width: 90% !important;
     .username-register-input,
     .email-register-input,
     .password-register-input,
     .repeat-password-register-input,
     .identifier-login-input,
     .password-login-input {
-      width: 230px !important;
+      width: 280px !important;
     }
     .login-button,
     .create-account-button {
@@ -34,6 +34,10 @@
     justify-content: center !important;
     padding-left: 0 !important;
     .logout-button {
+      width: 50px !important;
+      height: 50px !important;
+    }
+    .logout-button {
       position: absolute !important;
       right: 0;
       top: -4px;
@@ -47,6 +51,13 @@
   }
   .todo-delete-button {
     visibility: visible !important;
+  }
+  .logo {
+    font-size: 48px !important;
+  }
+  .sort-input {
+    width: 100px !important;
+    text-indent: 36px !important;
   }
 }
 

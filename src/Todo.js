@@ -37,7 +37,11 @@ const Todo = ({ id, name, task, created_at }) => {
           }`}</p>
           <p className="all-tasks-text">{`All: ${allTasksNumber}`}</p>
         </div>
-        <button className="todo-delete-button" onClick={(e) => deleteTodo(id)}>
+        <button
+          aria-label="delete"
+          className="todo-delete-button"
+          onClick={(e) => deleteTodo(id)}
+        >
           <FaTrash className="delete-icon" />
         </button>
       </div>

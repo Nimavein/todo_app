@@ -65,6 +65,7 @@ const Sort = () => {
   return (
     <div>
       <button
+        aria-label="order"
         className={
           order === false ? "change-sort-button" : "change-sort-button open"
         }
