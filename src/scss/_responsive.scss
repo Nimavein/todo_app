@@ -43,6 +43,10 @@
       top: -4px;
     }
   }
+  .add-todo-container,
+  .edit-todo-container {
+    width: 85% !important;
+  }
   .search-input {
     width: 40vw !important;
   }
