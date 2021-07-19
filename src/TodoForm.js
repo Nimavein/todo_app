@@ -14,12 +14,15 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
     setTodoData({
       ...todoData,
       [e.currentTarget.id]: e.currentTarget.value,
-      task: allTasksToAddData,
     });
   };
 
   const handleAddTodo = (e) => {
     if (todoData) {
+      setTodoData({
+        ...todoData,
+        task: allTasksToAddData,
+      });
       e.preventDefault();
       const config = {
         headers: { Authorization: `Bearer ${jwt}` },
@@ -80,7 +83,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
         <TaskForm
           todoData={todoData}
           setTodoData={setTodoData}
-          handleFormChange={handleFormChange}
+          handleTodoFormChange={handleFormChange}
           taskData={taskData}
           setTaskData={setTaskData}
           allTasksToAddData={allTasksToAddData}
