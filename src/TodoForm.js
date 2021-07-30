@@ -2,27 +2,29 @@ import { useGlobalContext } from "./context";
 import React, { useState, useEffect } from "react";
 import TaskForm from "./TaskForm";
 import axios from "axios";
-
 const TodoForm = ({ handleAddTodoVisibility }) => {
   const [todoData, setTodoData] = useState();
-  const { setTodoList, jwt, setOrder } = useGlobalContext();
-  const [taskData, setTaskData] = useState({});
+  const { setTodoList, jwt, setOrder, todoList } = useGlobalContext();
+  const [taskData, setTaskData] = useState([]);
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
-
   const handleFormChange = (e) => {
     setTodoData({
       ...todoData,
       [e.currentTarget.id]: e.currentTarget.value,
+      task: allTasksToAddData,
     });
   };
 
+  useEffect(() => {
+    setTodoData({
+      ...todoData,
+      task: allTasksToAddData,
+    });
+  }, [allTasksToAddData]);
+
   const handleAddTodo = (e) => {
     if (todoData) {
-      setTodoData({
-        ...todoData,
-        task: allTasksToAddData,
-      });
       e.preventDefault();
       const config = {
         headers: { Authorization: `Bearer ${jwt}` },
@@ -57,15 +59,12 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
       setErrorMessage("List must have a name");
     }
   };
-
   useEffect(() => {
     const timeout = setTimeout(() => {
       setErrorMessage(null);
     }, 2000);
-
     return () => clearTimeout(timeout);
   }, [errorMessage]);
-
   return (
     <div className="form-backdrop">
       <div className="add-todo-container">
@@ -83,7 +82,7 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
         <TaskForm
           todoData={todoData}
           setTodoData={setTodoData}
-          handleTodoFormChange={handleFormChange}
+          handleFormChange={handleFormChange}
           taskData={taskData}
           setTaskData={setTaskData}
           allTasksToAddData={allTasksToAddData}
@@ -111,5 +110,4 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
     </div>
   );
 };
-
 export default TodoForm;
