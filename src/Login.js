@@ -30,7 +30,6 @@ const Login = () => {
       const response = await axios.post(
         "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/auth/local",
         {
-          headers: { "Access-Control-Allow-Origin": "*" },
           identifier: loginData.identifier,
           password: loginData.password,
         }
