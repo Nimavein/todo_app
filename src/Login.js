@@ -28,7 +28,7 @@ const Login = () => {
     setErrorMsg(null);
     try {
       const response = await axios.post(
-        "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/auth/local",
+        "https://recruitment.ultimate.systems/auth/local",
         {
           identifier: loginData.identifier,
           password: loginData.password,

@@ -17,7 +17,7 @@ const TodosContainer = () => {
 
   useEffect(async () => {
     const data = await axios.get(
-      "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
+      "https://recruitment.ultimate.systems/to-do-lists",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -64,7 +64,7 @@ const TodosContainer = () => {
         <img
           className="add-todo-button"
           src={add}
-          alt="Add list"
+          alt="add list"
           onClick={handleAddTodoVisibility}
         />
         {isAddTodoVisible && (

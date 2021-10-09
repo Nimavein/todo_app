@@ -32,20 +32,17 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
       const bodyParameters = { name: todoData.name, task: todoData.task };
       axios
         .post(
-          "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
+          "https://recruitment.ultimate.systems/to-do-lists",
           bodyParameters,
           config
         )
         .then((response) => {
           axios
-            .get(
-              "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
-              {
-                headers: {
-                  Authorization: `Bearer ${jwt}`,
-                },
-              }
-            )
+            .get("https://recruitment.ultimate.systems/to-do-lists", {
+              headers: {
+                Authorization: `Bearer ${jwt}`,
+              },
+            })
             .then((response) => {
               setTodoList(response.data);
             });

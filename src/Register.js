@@ -20,14 +20,11 @@ const Register = () => {
     e.preventDefault();
     if (registrationData.password === registrationData.confirmPassword) {
       axios
-        .post(
-          "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/auth/local/register",
-          {
-            username: registrationData.username,
-            email: registrationData.email,
-            password: registrationData.password,
-          }
-        )
+        .post("https://recruitment.ultimate.systems/auth/local/register", {
+          username: registrationData.username,
+          email: registrationData.email,
+          password: registrationData.password,
+        })
         .then((response) => {
           history.push("/");
         })

@@ -35,20 +35,17 @@ const TodoEditForm = ({ id, handleEditVisibility, name, task }) => {
     };
     axios
       .put(
-        `https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists/${id}`,
+        `https://recruitment.ultimate.systems/to-do-lists/${id}`,
         bodyParameters,
         config
       )
       .then((response) => {
         axios
-          .get(
-            "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
-            {
-              headers: {
-                Authorization: `Bearer ${jwt}`,
-              },
-            }
-          )
+          .get("https://recruitment.ultimate.systems/to-do-lists", {
+            headers: {
+              Authorization: `Bearer ${jwt}`,
+            },
+          })
           .then((response) => {
             setTodoList(response.data);
           });

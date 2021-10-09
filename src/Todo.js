@@ -13,14 +13,11 @@ const Todo = ({ id, name, task, created_at }) => {
 
   const deleteTodo = (id) => {
     const newTodos = todoList.filter((todo) => todo.id !== id);
-    axios.delete(
-      `https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists/${id}`,
-      {
-        headers: {
-          Authorization: `Bearer ${jwt}`,
-        },
-      }
-    );
+    axios.delete(`https://recruitment.ultimate.systems/to-do-lists/${id}`, {
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+      },
+    });
     setTodoList(newTodos);
   };
 
