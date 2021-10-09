@@ -64,7 +64,7 @@ const TodosContainer = () => {
         <img
           className="add-todo-button"
           src={add}
-          alt="add list"
+          alt="Add list"
           onClick={handleAddTodoVisibility}
         />
         {isAddTodoVisible && (
