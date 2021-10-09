@@ -27,13 +27,10 @@ const Login = () => {
     e.preventDefault();
     setErrorMsg(null);
     try {
-      const response = await axios.post(
-        "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/auth/local",
-        {
-          identifier: loginData.identifier,
-          password: loginData.password,
-        }
-      );
+      const response = await axios.post(".systems/auth/local", {
+        identifier: loginData.identifier,
+        password: loginData.password,
+      });
       setJwt(response.data.jwt);
       localStorage.setItem("jwt", response.data.jwt);
       if (!response.data.user) {
