@@ -71,7 +71,7 @@ const Sort = () => {
         }
         onClick={changeOrder}
       >
-        {selectedValue != "" && <FaChevronDown className="arrow-icon" />}
+        {selectedValue !== "" && <FaChevronDown className="arrow-icon" />}
       </button>
       <select
         onChange={(e) => handleSort(e)}

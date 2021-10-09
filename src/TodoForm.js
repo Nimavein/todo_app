@@ -4,7 +4,7 @@ import TaskForm from "./TaskForm";
 import axios from "axios";
 const TodoForm = ({ handleAddTodoVisibility }) => {
   const [todoData, setTodoData] = useState();
-  const { setTodoList, jwt, setOrder, todoList } = useGlobalContext();
+  const { setTodoList, jwt, setOrder } = useGlobalContext();
   const [taskData, setTaskData] = useState([]);
   const [allTasksToAddData, setAllTasksToAddData] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
@@ -32,18 +32,20 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
       const bodyParameters = { name: todoData.name, task: todoData.task };
       axios
         .post(
-          "https://recruitment.ultimate.systems/to-do-lists",
+          "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
           bodyParameters,
           config
         )
         .then((response) => {
-          // Handle success.
           axios
-            .get("https://recruitment.ultimate.systems/to-do-lists", {
-              headers: {
-                Authorization: `Bearer ${jwt}`,
-              },
-            })
+            .get(
+              "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
+              {
+                headers: {
+                  Authorization: `Bearer ${jwt}`,
+                },
+              }
+            )
             .then((response) => {
               setTodoList(response.data);
             });
@@ -52,7 +54,6 @@ const TodoForm = ({ handleAddTodoVisibility }) => {
           handleAddTodoVisibility();
         })
         .catch((error) => {
-          // Handle error.
           console.log("An error occurred:", error.response);
         });
     } else {

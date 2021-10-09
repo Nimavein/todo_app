@@ -17,7 +17,7 @@ const TodosContainer = () => {
 
   useEffect(async () => {
     const data = await axios.get(
-      "https://recruitment.ultimate.systems/to-do-lists",
+      "https://thingproxy.freeboard.io/fetch/https://recruitment.ultimate.systems/to-do-lists",
       {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -36,7 +36,6 @@ const TodosContainer = () => {
   return (
     <div className="todos-container">
       <div className="content">
-        {" "}
         <div className="filter-sort">
           <Filter />
           <Sort />

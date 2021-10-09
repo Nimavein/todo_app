@@ -2,8 +2,6 @@ import React from "react";
 import { useGlobalContext } from "./context";
 import { useHistory } from "react-router";
 import logout from "./images/logout.png";
-import Login from "./Login";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const { setJwt, setOrder } = useGlobalContext();

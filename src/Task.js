@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useGlobalContext } from "./context";
 
-const Task = ({ name, isDone, id, todoId, todoName }) => {
+const Task = ({ name, isDone, id, todoId }) => {
   const [isTaskDone, setIsTaskDone] = useState(isDone);
   const { todoList, setTodoList } = useGlobalContext();
 
